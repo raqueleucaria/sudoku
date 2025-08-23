@@ -16,8 +16,8 @@ classDiagram
     
     class Space {
         - actual: Integer
-        + fixed: boolean
-        + expected: int
+        - fixed: boolean
+        - expected: int
         + getActual(): Integer
         + setActual(Integer value): void
         + clearSpace(): void
@@ -30,6 +30,8 @@ classDiagram
         NON_STARTED
         INCOMPLETE
         COMPLETE
+        - label: String
+        + getLabel(): String
     }
     
     Board "1" o-- "*" Space : contains
@@ -64,6 +66,11 @@ Enumeração que define os possíveis estados do jogo.
     - `NON_STARTED` — O jogo ainda não começou (nenhum número foi inserido).
     - `INCOMPLETE` — O jogo está em andamento, mas ainda não está completo.
     - `COMPLETE` — O jogo está completo (todas as células preenchidas).
+- Atributos:
+    - `label: String` —  Rótulo textual para o status do jogo (ex: "completo").
+
+- Métodos:
+    - `getLabel(): String` — Retorna o rótulo do status.
 
 ---
 
