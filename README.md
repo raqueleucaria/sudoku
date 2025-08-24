@@ -9,3 +9,6 @@ O Sudoku é um jogo simples: preencha um tabuleiro 9x9 com números de 1 a 9, ga
 
 ### Modelo de rascunho
 ![rascunho](https://raw.githubusercontent.com/digitalinnovationone/exercicios-java-basico/refs/heads/main/images/draft.gif)
+
+## Referência
+Este projeto foi desenvolvido com base no desafio de projeto proposto pela [Digital Innovation One](https://github.com/digitalinnovationone/sudoku).
