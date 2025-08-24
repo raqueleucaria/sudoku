@@ -1,6 +1,8 @@
 package br.com.eucaria.ui.custom.input;
 
 import br.com.eucaria.model.Space;
+import br.com.eucaria.service.EventEnum;
+import br.com.eucaria.service.EventListener;
 
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -8,9 +10,10 @@ import javax.swing.event.DocumentListener;
 import java.awt.Dimension;
 import java.awt.Font;
 
+import static br.com.eucaria.service.EventEnum.CLEAR_SPACE;
 import static java.awt.Font.PLAIN;
 
-public class NumberText extends JTextField {
+public class NumberText extends JTextField implements EventListener {
 
     private final Space space;
 
@@ -53,5 +56,12 @@ public class NumberText extends JTextField {
             }
 
         });
+    }
+
+    @Override
+    public void update(final EventEnum eventType) {
+        if (eventType.equals(CLEAR_SPACE) && (this.isEnabled())){
+            this.setText("");
+        }
     }
 }
